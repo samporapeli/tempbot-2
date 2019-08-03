@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 
 import os
-
-onewire_path = "/sys/bus/w1/devices/"
+import config
 
 def sensor_list():
-    sensors = os.listdir(onewire_path)
+    sensors = os.listdir(config.onewire_path)
     sensors.remove("w1_bus_master1")
     return sensors
 
