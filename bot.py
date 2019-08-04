@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import sys
-import json
 import requests
 
 api_prefix = "https://api.telegram.org/bot"
