@@ -11,7 +11,7 @@ def sensor_list():
 def sensor_temp(sensor):
     try:
         file_path = "{path}{sensor}/w1_slave".format(
-            path = onewire_path, sensor = sensor)
+            path = config.onewire_path, sensor = sensor)
         with open(file_path) as sensor_file:
             data = sensor_file.readlines()
     except:
