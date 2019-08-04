@@ -22,7 +22,7 @@ while True:
         output = []
         for sensor in current_sensors:
             sensor_name = config.sensor_names.get(sensor, 
-                "Sensor " + str(current_sensors.index(sensor) + 1))
+                "Sensor " + sensor)
             output.append(sensor_name + ": " + sensors.pretty_temp(sensor))
         clear()
         for out in output:
