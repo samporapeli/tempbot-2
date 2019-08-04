@@ -8,3 +8,5 @@ sensor_names = {
     "28-04169353faff":"Sisä",
     "28-0516b2fa75ff":"Lattia"
 }
+
+use_decimal_comma = True

@@ -27,3 +27,10 @@ def sensor_temp(sensor):
         return millicelcius / 1000
     except:
         return "Error with parsing temperature data"
+
+def pretty_temp(sensor):
+    raw = sensor_temp(sensor)
+    rounded = str(round(raw, 1))
+    if (config.use_decimal_comma):
+        rounded = rounded.replace(".", ",")
+    return rounded + " °C"
