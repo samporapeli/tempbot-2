@@ -33,4 +33,4 @@ def pretty_temp(sensor):
     rounded = str(round(raw, 1))
     if (config.use_decimal_comma):
         rounded = rounded.replace(".", ",")
-    return rounded + " °C"
+    return rounded + "°C"
