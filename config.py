@@ -10,5 +10,6 @@ sensor_names = {
     "28-04169353faff":"Sisä",
     "28-0516b2fa75ff":"Lattia"
 }
+temperature_update_seconds = 15
 use_decimal_comma = True
 

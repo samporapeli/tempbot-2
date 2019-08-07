@@ -1,6 +1,7 @@
 #!/bin/bash
 
-TEMPBOT=~/tempbot-2
+TEMPBOT=~/tempbot-2/
 
-python3 $TEMPBOT/temperature.py $TEMPBOT &
-python3 $TEMPBOT/bot.py $TEMPBOT &
+source $TEMPBOT/venv/bin/activate
+python3 $TEMPBOT/tempbot_2.py $TEMPBOT &
+python3 $TEMPBOT/temperature_service.py $TEMPBOT
