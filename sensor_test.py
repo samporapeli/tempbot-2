@@ -2,8 +2,7 @@
 
 import os
 import time
-import sensors
-import config
+import temperature
 
 update_seconds = 5
 last_updated = time.time() - update_seconds
@@ -18,15 +17,13 @@ while True:
     if time.time() - last_updated > update_seconds:
         print("Loading new data...", end="\r")
         last_updated = time.time()
-        current_sensors = sensors.sensor_list()
         output = []
-        for sensor in current_sensors:
-            sensor_name = config.sensor_names.get(sensor, 
-                "Sensor " + sensor)
-            output.append(sensor_name + ": " + sensors.pretty_temp(sensor))
+        temperatures = temperature.Temperatures()
+        temperatures.write_temps()
+        for temp in temperatures.temps:
+            output.append(temp.to_string())
         clear()
-        for out in output:
-            print(out)
+        print(temperatures.to_string())
         print("Loaded", end="\r")
         
     time.sleep(0.2)

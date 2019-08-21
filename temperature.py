@@ -39,8 +39,14 @@ class Temperature:
         write_file_temp(self)
     def sensor_temp(self):
         return sensors.sensor_temp(self.sensor_id)
+    def pretty_temp(self):
+        number = self.read_temp()
+        rounded = str(round(number, 1))
+        if (config.use_decimal_comma):
+            rounded = rounded.replace(".", ",")
+        return rounded + "°C"
     def to_string(self):
-        return self.name() + ": " + str(self.read_temp())
+        return self.name() + ": " + self.pretty_temp()
 
 class Temperatures:
     def __init__(self):
