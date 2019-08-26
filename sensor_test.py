@@ -17,11 +17,8 @@ while True:
     if time.time() - last_updated > update_seconds:
         print("Loading new data...", end="\r")
         last_updated = time.time()
-        output = []
         temperatures = temperature.Temperatures()
         temperatures.write_temps()
-        for temp in temperatures.temps:
-            output.append(str(temp))
         clear()
         print(temperatures)
         print("Loaded", end="\r")
