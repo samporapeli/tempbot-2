@@ -21,9 +21,9 @@ while True:
         temperatures = temperature.Temperatures()
         temperatures.write_temps()
         for temp in temperatures.temps:
-            output.append(temp.to_string())
+            output.append(str(temp))
         clear()
-        print(temperatures.to_string())
+        print(temperatures)
         print("Loaded", end="\r")
         
     time.sleep(0.2)

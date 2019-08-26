@@ -45,7 +45,7 @@ class Temperature:
         if (config.use_decimal_comma):
             rounded = rounded.replace(".", ",")
         return rounded + "°C"
-    def to_string(self):
+    def __str__(self):
         return self.name() + ": " + self.pretty_temp()
 
 class Temperatures:
@@ -60,5 +60,5 @@ class Temperatures:
         return list(map(lambda temp: temp.sensor_id, self.temps))
     def write_temps(self):
         return list(map(lambda temp: temp.write_temp(), self.temps))
-    def to_string(self):
-        return "\n".join(list(map(lambda temp: temp.to_string(), self.temps)))
+    def __str__(self):
+        return "\n".join(list(map(lambda temp: str(temp), self.temps)))

@@ -10,5 +10,5 @@ temperatures = Temperatures()
 while True:
     message = tg.next_message()
     if (message):
-        tg.reply(message, temperatures.to_string())
+        tg.reply(message, temperatures)
     time.sleep(0.1)
