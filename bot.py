@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import time
 import sys
 import requests
 
@@ -19,7 +20,17 @@ def fetch_data(url, extra_parameters = {}):
     default_parameters = {"limit":1}
     parameters = default_parameters.copy()
     parameters.update(extra_parameters)
-    request = requests.get(url, params = parameters)
+    while True:
+        try:
+            request = requests.get(url, params = parameters)
+            break
+        except requests.exceptions.RequestException as e:
+            print("Error occured:")
+            print(e)
+            wait_time = 5
+            print("Trying again in " + str(wait_time) + " seconds...")
+            time.sleep(wait_time)
+
     return request.json()
 
 class TelegramBot:
